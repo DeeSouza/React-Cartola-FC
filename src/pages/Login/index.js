@@ -1,7 +1,28 @@
 import React from 'react';
+import { Form, Input } from '@rocketseat/unform';
 
-// import { Container } from './styles';
+import { WrapperLogin, TitleLogin, SubmitLogin } from './styles';
 
 export default function Login() {
-	return <h1>das</h1>;
+	return (
+		<WrapperLogin>
+			<TitleLogin>REACT CARTOLA</TitleLogin>
+
+			<Form autoComplete="off">
+				<Input
+					name="email"
+					type="email"
+					placeholder="Digite seu e-mail"
+				/>
+
+				<Input
+					name="password"
+					type="password"
+					placeholder="Digite sua senha"
+				/>
+
+				<SubmitLogin type="submit">ENTRAR</SubmitLogin>
+			</Form>
+		</WrapperLogin>
+	);
 }

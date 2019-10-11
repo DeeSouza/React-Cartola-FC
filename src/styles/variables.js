@@ -1,5 +1,8 @@
 export default {
 	fontRoboto: 'Roboto',
-	linearGradientPrimary: '#000',
-	linearGradiendSecondary: '#999',
+	linearGradientPrimary: '#dfb375',
+	linearGradiendSecondary: '#eace9a',
+	colorPrimary: '#73B5DE',
+	colorHoverPrimary: '#2F6B91',
+	colorSecondary: '#FFD79E',
 };
