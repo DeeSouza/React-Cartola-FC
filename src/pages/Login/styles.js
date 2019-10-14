@@ -74,4 +74,17 @@ export const SubmitLogin = styled.button`
 		background-color: ${settings.colorSecondary};
 		box-shadow: rgba(0, 0, 0, 0.40) 0px 10px 20px -7px;
 	}
+
+	svg{
+		animation: loading 1s linear infinite;
+	}
+
+	@keyframes loading {
+		from{
+			transform: rotate(0deg);
+		}
+		to{
+			transform: rotate(360deg);
+		}
+	}
 `;
