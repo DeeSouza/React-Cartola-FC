@@ -9,21 +9,24 @@ export function* doLogin({ payload }) {
 
 	try {
 		// Call Sessions API for Login
-		const response = yield call(api.post, 'sessions', {
-			email,
-			password,
+		const response = yield call(api.post, 'authentication', {
+			payload: {
+				email,
+				password,
+				serviceId: 4728,
+			},
 		});
 
-		const { token, user } = response.data;
+		const { glbId } = response.data;
 
 		// Save Token in the Header
-		api.defaults.headers.Authorization = `Bearer ${token}`;
+		// api.defaults.headers.Authorization = `Bearer ${token}`;
 
 		// Call Action (PUT)
-		yield put(loginSuccess(token, user));
+		yield put(loginSuccess(glbId, email));
 
 		// Redirect to Dashboard if Logged
-		history.push('dashboard');
+		// history.push('dashboard');
 	} catch (error) {
 		// Call Action (PUT)
 		yield put(loginFailure());
