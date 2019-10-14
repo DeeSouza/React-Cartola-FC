@@ -6,12 +6,16 @@ import { Route, Redirect } from 'react-router-dom';
 import AuthLayout from '../pages/Layouts/Auth';
 import FrontendLayout from '../pages/Layouts/Frontend';
 
+// Load Store Redux
+import { store } from '../store';
+
 export default function RouteWrapper({
 	component: Component,
 	isPrivate,
 	...rest
 }) {
-	const signed = false;
+	// Control if user is checked
+	const { signed } = store.getState().auth;
 
 	if (!signed && isPrivate) {
 		return <Redirect to="/" />;
