@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { lighten } from 'polished';
 import settings from '../../styles/variables';
 
 export const WrapperLogin = styled.div`
@@ -23,27 +22,27 @@ export const WrapperLogin = styled.div`
 			font-family: "${settings.fontRoboto}";
 			margin-bottom: 10px;
 			font-weight: 500;
-			background-color: ${settings.colorPrimary};
+			background-color: rgba(0, 0, 0, 0.15);
 			border-left: 0px solid transparent;
-			color: ${settings.colorHoverPrimary};
+			color: #FFF;
 			transition: all 0.25s ease-out;
 
 			&:focus{
-				border-left: 10px solid ${settings.colorHoverPrimary};
+				border-left: 10px solid ${settings.colorSecondary};
 			}
 
 			::placeholder {
 				font-family: "${settings.fontRoboto}";
-				color: ${settings.colorHoverPrimary};
-				font-weight: 500;
+				color: #FFF;
+				font-weight: 200;
 			}
 		}
 	}
 `;
 
-export const TitleLogin = styled.h1`
-	font-size: 20px;
-	color: #f5f5f5;
+export const ImageLogin = styled.img`
+	width: 64px;
+	height: 64px;
 `;
 
 export const SubmitLogin = styled.button`
@@ -51,15 +50,19 @@ export const SubmitLogin = styled.button`
 	border: none;
 	height: 45px;
 	margin-top: 15px;
-	background-color: #f5f5f5;
+	background-color: #FFF;
+	box-shadow: rgba(0, 0, 0, 0.41) 0px 10px 6px -7px;
 	border-radius: 4px;
-	color: #474548;
+	color: #3e3e3e;
     font-size: 17px;
     font-weight: 700;
     font-family: "${settings.fontRoboto}";
 	transition: all 0.25s ease-out;
+	margin-bottom: 10px;
 
-	&:hover{
-		background-color: ${lighten(1, '#f5f5f5')};
+	&:hover, &:focus{
+		color: #000;
+		background-color: ${settings.colorSecondary};
+		box-shadow: rgba(0, 0, 0, 0.40) 0px 10px 20px -7px;
 	}
 `;

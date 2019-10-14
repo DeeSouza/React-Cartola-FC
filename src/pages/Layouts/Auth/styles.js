@@ -8,9 +8,9 @@ export const WrapperLayout = styled.div`
 	align-items: center;
 	min-height: 100%;
 	background: linear-gradient(
-		-45deg,
-		${settings.linearGradientPrimary} 25%,
-		${settings.linearGradiendSecondary} 45%
+		360deg,
+		${settings.linearGradientPrimary},
+		${settings.linearGradiendSecondary}
 	);
 `;
 

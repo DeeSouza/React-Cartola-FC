@@ -1,12 +1,14 @@
 import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 
-import { WrapperLogin, TitleLogin, SubmitLogin } from './styles';
+import { WrapperLogin, ImageLogin, SubmitLogin } from './styles';
+
+import logo from '../../assets/images/logo-react-cartola.svg';
 
 export default function Login() {
 	return (
 		<WrapperLogin>
-			<TitleLogin>REACT CARTOLA</TitleLogin>
+			<ImageLogin src={logo} />
 
 			<Form autoComplete="off">
 				<Input
