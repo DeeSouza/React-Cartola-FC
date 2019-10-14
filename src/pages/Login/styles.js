@@ -13,6 +13,15 @@ export const WrapperLogin = styled.div`
 		max-width: 300px;
 		margin-top: 20px;
 
+		span{
+			text-align: left;
+			display: block;
+			font-weight: 400;
+			font-family: Roboto;
+			color: white;
+			margin-bottom: 10px;
+		}
+
 		input {
 			width: 100%;
 			border: none;
