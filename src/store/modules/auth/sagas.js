@@ -9,13 +9,22 @@ export function* doLogin({ payload }) {
 
 	try {
 		// Call Sessions API for Login
-		const response = yield call(api.post, 'authentication', {
-			payload: {
-				email,
-				password,
-				serviceId: 4728,
+		const response = yield call(
+			api.post,
+			'authentication',
+			{
+				payload: {
+					email,
+					password,
+					serviceId: 4728,
+				},
 			},
-		});
+			{
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		);
 
 		const { glbId } = response.data;
 
@@ -26,11 +35,11 @@ export function* doLogin({ payload }) {
 		yield put(loginSuccess(glbId, email));
 
 		// Redirect to Dashboard if Logged
-		// history.push('dashboard');
+		history.push('dashboard');
 	} catch (error) {
 		// Call Action (PUT)
 		yield put(loginFailure());
-		toast.error('Whoops! E-mail e senha inválidos.');
+		toast.error('😭 😭 😭 E-mail e senha inválidos.');
 	}
 }
 

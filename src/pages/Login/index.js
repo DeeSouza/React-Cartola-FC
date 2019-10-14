@@ -18,8 +18,8 @@ const schema = Yup.object().shape({
 export default function Login() {
 	const dispatch = useDispatch();
 
-	function handleSubmitLogin(data) {
-		dispatch(loginRequest(data));
+	function handleSubmitLogin({ email, password }) {
+		dispatch(loginRequest(email, password));
 	}
 
 	return (
