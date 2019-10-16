@@ -36,12 +36,24 @@ export default function Dashboard() {
 			</Card>
 
 			<Card>
-				<h3>RODATA ATUAL DO CAMPEONATO</h3>
+				<h3>FECHAMENTO</h3>
+
+				{market && market.fechamento ? (
+					<CurrentRound>
+						{market.fechamento.hora}h{market.fechamento.minuto}min
+					</CurrentRound>
+				) : (
+					<CurrentRound>FECHADO</CurrentRound>
+				)}
+			</Card>
+
+			<Card>
+				<h3>RODADA ATUAL DO CAMPEONATO</h3>
 
 				{market && market.rodada_atual ? (
 					<CurrentRound>{market.rodada_atual}</CurrentRound>
 				) : (
-					'0 Rodada'
+					<CurrentRound>0</CurrentRound>
 				)}
 			</Card>
 		</Container>
