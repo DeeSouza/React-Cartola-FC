@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import settings from '../../../styles/variables';
 
 export const WrapperLayout = styled.div`

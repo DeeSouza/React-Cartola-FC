@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
 	FaShoppingBasket,
@@ -19,18 +20,14 @@ import {
 export default function FrontendLayout({ children }) {
 	const [open, setOpen] = useState(false);
 
-	function openMenu() {
-		setOpen(!open);
-	}
-
-	function closeMenu() {
+	function toggleMenu() {
 		setOpen(!open);
 	}
 
 	return (
 		<WrapperLayout>
 			<HeaderMenu>
-				<OpenMenu onClick={openMenu}>
+				<OpenMenu onClick={toggleMenu}>
 					<span />
 				</OpenMenu>
 			</HeaderMenu>
@@ -38,32 +35,32 @@ export default function FrontendLayout({ children }) {
 			<Menu open={open}>
 				<ul>
 					<li>
-						<a href="#">
+						<Link to="/">
 							<FaShoppingBasket size={15} color="#FFF" />
 							<div>MERCADO</div>
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="#">
+						<Link to="/">
 							<FaUsers size={15} color="#FFF" />
 							<div>TIME</div>
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="#">
+						<Link to="/">
 							<FaTrophy size={15} color="#FFF" />
 							<div>LIGAS</div>
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="#">
+						<Link to="/">
 							<FaSignOutAlt size={15} color="#FFF" />
 							<div>SAIR</div>
-						</a>
+						</Link>
 					</li>
 				</ul>
 
-				<CloseMenu onClick={closeMenu}>
+				<CloseMenu onClick={toggleMenu}>
 					<FaTimes size={25} color="#00b3a5" />
 				</CloseMenu>
 			</Menu>
