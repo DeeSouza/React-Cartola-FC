@@ -11,7 +11,6 @@ export default function Dashboard() {
 	useEffect(() => {
 		async function loadStatusMercado() {
 			const response = await cartolaAPI.get('mercado/status');
-			console.log(response.data);
 			setMarket(response.data);
 		}
 
