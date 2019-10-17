@@ -23,20 +23,27 @@ export const StatusMarket = styled.div`
 	margin-top: 20px;
 
 	svg {
-		fill: ${props => (props.status ? '#00b3a5' : '#fd3829')};
+		fill: ${props => (props.status === 1 ? '#00b3a5' : '#fd3829')};
 	}
 
 	div {
 		margin-left: 10px;
 		font-weight: 500;
-		color: ${props => (props.status ? '#00b3a5' : '#fd3829')};
+		color: ${props => (props.status === 1 ? '#00b3a5' : '#fd3829')};
 	}
 `;
 
 export const CurrentRound = styled.div`
 	display: flex;
-	justify-content: left;
-	align-items: center;
+	justify-content: center;
+	align-items: flex-start;
 	margin-top: 20px;
 	font-size: 24px;
+	flex-direction: column;
+
+	small {
+		font-size: 15px;
+		margin-right: 10px;
+		color: #333;
+	}
 `;

@@ -12,7 +12,7 @@ import {
 
 import { Container, CloseMenu } from './styles';
 
-export default function Menu({ open, toggleMenu }) {
+export default function Menu({ open, toggleMenu, handleLogout }) {
 	return (
 		<Container open={open}>
 			<ul>
@@ -35,7 +35,7 @@ export default function Menu({ open, toggleMenu }) {
 					</Link>
 				</li>
 				<li>
-					<Link to="/">
+					<Link to="/" onClick={handleLogout}>
 						<FaSignOutAlt size={15} color="#FFF" />
 						<div>SAIR</div>
 					</Link>
@@ -52,4 +52,5 @@ export default function Menu({ open, toggleMenu }) {
 Menu.propTypes = {
 	open: PropTypes.bool.isRequired,
 	toggleMenu: PropTypes.func.isRequired,
+	handleLogout: PropTypes.func.isRequired,
 };

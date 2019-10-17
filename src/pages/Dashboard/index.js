@@ -22,7 +22,7 @@ export default function Dashboard() {
 			<Card>
 				<h3>STATUS DO MERCADO</h3>
 
-				{market && market.status_mercado ? (
+				{market && market.status_mercado === 1 ? (
 					<StatusMarket status={market.status_mercado}>
 						<FaCheckCircle size={30} color="#00b3a5" />
 						<div>MERCADO ABERTO</div>
@@ -40,7 +40,13 @@ export default function Dashboard() {
 
 				{market && market.fechamento ? (
 					<CurrentRound>
-						{market.fechamento.hora}h{market.fechamento.minuto}min
+						<small>
+							{market.fechamento.dia}/{market.fechamento.mes}
+						</small>
+						<strong>
+							{market.fechamento.hora}h{market.fechamento.minuto}
+							min
+						</strong>
 					</CurrentRound>
 				) : (
 					<CurrentRound>FECHADO</CurrentRound>
