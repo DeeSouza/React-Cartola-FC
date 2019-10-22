@@ -3,8 +3,9 @@ import CurrencyFormat from 'react-currency-format';
 import cartolaAPI from '../../services/cartola';
 
 import Card from '../../components/Card';
+import Player from '../../components/Player';
 
-import { Container, Time, Patrimony, Player, Players, Cap } from './styles';
+import { Container, Time, Patrimony, Players } from './styles';
 
 export default function Team() {
 	const [team, setTeam] = useState([]);
@@ -100,75 +101,13 @@ export default function Team() {
 					<Players>
 						{players &&
 							players.map(player => (
-								<Player key={player.atleta_id}>
-									<div className="avatar-player">
-										<img
-											src={player.foto}
-											alt={player.apelido}
-										/>
-
-										{player.capitao && <Cap>C</Cap>}
-									</div>
-
-									<div className="detail">
-										<h2>{player.posicao}</h2>
-
-										<div className="detail-player">
-											<h3>{player.apelido}</h3>
-
-											<CurrencyFormat
-												value={player.preco_num}
-												prefix="C$"
-												displayType="text"
-												fixedDecimalScale
-												renderText={value => (
-													<h4>{value}</h4>
-												)}
-											/>
-										</div>
-
-										{player.escudo_time && (
-											<img
-												alt={player.escudo_time.nome}
-												src={
-													player.escudo_time.escudos[
-														'30x30'
-													]
-												}
-											/>
-										)}
-									</div>
-								</Player>
+								<Player
+									key={player.atleta_id}
+									player={player}
+								/>
 							))}
 
-						<Player key={coach.atleta_id}>
-							<div className="avatar-player">
-								<img src={coach.foto} alt={coach.apelido} />
-							</div>
-
-							<div className="detail">
-								<h2>{coach.posicao}</h2>
-
-								<div className="detail-player">
-									<h3>{coach.apelido}</h3>
-
-									<CurrencyFormat
-										value={coach.preco_num}
-										prefix="C$"
-										fixedDecimalScale
-										displayType="text"
-										renderText={value => <h4>{value}</h4>}
-									/>
-								</div>
-
-								{coach.escudo_time && (
-									<img
-										alt={coach.escudo_time.nome}
-										src={coach.escudo_time.escudos['30x30']}
-									/>
-								)}
-							</div>
-						</Player>
+						<Player key={coach.atleta_id} player={coach} />
 					</Players>
 				)}
 			</Card>
