@@ -44,8 +44,9 @@ export default function Dashboard() {
 							{market.fechamento.dia}/{market.fechamento.mes}
 						</small>
 						<strong>
-							{market.fechamento.hora}h{market.fechamento.minuto}
-							min
+							{market.fechamento.hora}h
+							{market.fechamento.minuto > 0 &&
+								`${market.fechamento.minuto}min`}
 						</strong>
 					</CurrentRound>
 				) : (

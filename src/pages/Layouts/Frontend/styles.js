@@ -16,8 +16,9 @@ export const MainWrapper = styled.main`
 	padding-top: 50px;
 `;
 
-export const HeaderMenu = styled.div`
+export const HeaderMenu = styled.header`
 	position: fixed;
+	z-index: 2;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;

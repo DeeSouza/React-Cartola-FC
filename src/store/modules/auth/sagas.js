@@ -1,5 +1,6 @@
 import { takeLatest, call, all, put } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
+import cartolaAPI from '../../../services/cartola';
 import api from '../../../services/api';
 import history from '../../../services/history';
 import { loginSuccess, loginFailure } from './actions';
@@ -29,7 +30,7 @@ export function* doLogin({ payload }) {
 		const { glbId } = response.data;
 
 		// Save Token in the Header
-		// api.defaults.headers.Authorization = `Bearer ${token}`;
+		cartolaAPI.defaults.headers['X-GLB-TOKEN'] = glbId;
 
 		// Call Action (PUT)
 		yield put(loginSuccess(glbId, email));
@@ -53,7 +54,7 @@ export function setToken({ payload }) {
 	const { token } = payload.auth;
 
 	if (token) {
-		api.defaults.headers.Authorization = `Bearer ${token}`;
+		cartolaAPI.defaults.headers['X-GLB-TOKEN'] = token;
 	}
 }
 

@@ -17,19 +17,19 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 		<Container open={open}>
 			<ul>
 				<li>
-					<Link to="/">
+					<Link to="/" onClick={toggleMenu}>
 						<FaShoppingBasket size={15} color="#FFF" />
 						<div>MERCADO</div>
 					</Link>
 				</li>
 				<li>
-					<Link to="/">
+					<Link to="/team" onClick={toggleMenu}>
 						<FaUsers size={15} color="#FFF" />
 						<div>TIME</div>
 					</Link>
 				</li>
 				<li>
-					<Link to="/">
+					<Link to="/" onClick={toggleMenu}>
 						<FaTrophy size={15} color="#FFF" />
 						<div>LIGAS</div>
 					</Link>
