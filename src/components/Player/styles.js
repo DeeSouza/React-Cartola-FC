@@ -29,6 +29,7 @@ export const Container = styled.li`
 			box-shadow: #908d8d 0px 0px 10px -3px;
 		}
 	}
+
 	.detail {
 		text-align: left;
 		display: flex;
@@ -38,15 +39,16 @@ export const Container = styled.li`
 
 		h2 {
 			font-size: 13px;
-			font-weight: 300;
+			font-weight: 400;
 		}
 
 		.detail-player {
 			margin-left: 15px;
 
 			h3 {
-				font-weight: 400;
+				font-weight: 500;
 				font-size: 14px;
+				color: #404040;
 			}
 
 			h4 {

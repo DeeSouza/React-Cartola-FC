@@ -11,9 +11,13 @@ export const WrapperLogin = styled.div`
 	h4{
 		font-weight: bold;
 		font-size: 15px;
-		color: #FFF;
+		color: #008277;
 		margin-top: 15px;
 		letter-spacing: 5px;
+
+		span{
+			color: #FFF;
+		}
 	}
 
 	form {
