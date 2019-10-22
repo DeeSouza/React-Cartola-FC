@@ -27,6 +27,7 @@ export default function Login() {
 	return (
 		<WrapperLogin>
 			<ImageLogin src={logo} />
+			<h4>REACT CARTOLA FC</h4>
 
 			<Form
 				autoComplete="off"

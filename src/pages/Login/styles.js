@@ -8,6 +8,14 @@ export const WrapperLogin = styled.div`
 	justify-content: center;
 	align-items: center;
 
+	h4{
+		font-weight: bold;
+		font-size: 15px;
+		color: #FFF;
+		margin-top: 15px;
+		letter-spacing: 5px;
+	}
+
 	form {
 		width: 90%;
 		max-width: 300px;
