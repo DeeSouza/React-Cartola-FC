@@ -43,7 +43,7 @@ Player.propTypes = {
 	player: PropTypes.shape({
 		foto: PropTypes.string,
 		capitao: PropTypes.bool,
-		posicao: PropTypes.number,
+		posicao: PropTypes.string,
 		apelido: PropTypes.string,
 		preco_num: PropTypes.number,
 		escudo_time: PropTypes.shape({

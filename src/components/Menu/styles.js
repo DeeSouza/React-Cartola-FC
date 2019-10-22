@@ -3,6 +3,7 @@ import settings from '../../styles/variables';
 
 export const Container = styled.nav`
 	position: fixed;
+	z-index: 3;
 	top: 0;
 	left: 0;
 	width: 100%;
