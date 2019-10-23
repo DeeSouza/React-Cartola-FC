@@ -35,7 +35,7 @@ Or **Fork** Project.
 
 Feel free to check issues page.
 
-## MAKE WITH 🛠
+## MADE WITH 🛠
 
 | TECH                 | LINK                                                       |
 | -------------------- | ---------------------------------------------------------- |
