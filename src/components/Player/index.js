@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CurrencyFormat from 'react-currency-format';
 
-import { Container, Cap } from './styles';
+import { Container } from './styles';
 
 export default function Player({ player }) {
 	return (
 		<Container>
 			<div className="avatar-player">
-				<img src={player.foto} alt={player.apelido} />
+				<div>
+					<img src={player.foto} alt={player.apelido} />
+				</div>
 
-				{player.capitao && <Cap>C</Cap>}
+				{player.capitao && <strong className="cap">C</strong>}
 			</div>
 
 			<div className="detail">

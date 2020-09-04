@@ -65,15 +65,13 @@ export default function Team() {
 		}
 
 		loadInfoTeam();
-	}, []); // eslint-disable-line
+	}, []);
 
 	return (
 		<Container>
 			<Card>
 				{infoTeam.time && (
 					<Time>
-						<img src={team.foto_perfil} alt={team.nome_cartola} />
-
 						<div className="info">
 							<h3>{team.nome}</h3>
 							<h4>{team.nome_cartola}</h4>
