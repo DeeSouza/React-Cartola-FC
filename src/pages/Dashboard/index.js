@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import Skeleton from 'react-loading-skeleton';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
-import { Container, StatusMarket, CurrentRound } from './styles';
-import cartolaAPI from '../../services/cartola';
 
 import Card from '../../components/Card';
+
+import cartolaAPI from '../../services/cartola';
+import { Container, StatusMarket, CurrentRound } from './styles';
 
 export default function Dashboard() {
 	const [market, setMarket] = useState([]);
 
 	useEffect(() => {
 		async function loadStatusMercado() {
-			const response = await cartolaAPI.get('mercado/status');
-			setMarket(response.data);
+			try {
+				const response = await cartolaAPI.get('mercado/status');
+				setMarket(response.data);
+			} catch (error) {
+				toast.error(
+					'😓 Não foi possível carregar os dados, tente novamente!',
+					{
+						position: 'top-right',
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+					}
+				);
+			}
 		}
 
 		loadStatusMercado();
@@ -22,45 +39,58 @@ export default function Dashboard() {
 			<Card>
 				<h3>STATUS DO MERCADO</h3>
 
-				{market && market.status_mercado === 1 ? (
+				{market.status_mercado ? (
 					<StatusMarket status={market.status_mercado}>
-						<FaCheckCircle size={30} color="#00b3a5" />
-						<div>MERCADO ABERTO</div>
+						{market.status_mercado === 1 ? (
+							<div>
+								<FaCheckCircle size={25} color="#00b3a5" />
+								<strong>MERCADO ABERTO</strong>
+							</div>
+						) : (
+							<div>
+								<FaTimesCircle size={25} color="#fd3829" />
+								<strong>MERCADO FECHADO</strong>
+							</div>
+						)}
 					</StatusMarket>
 				) : (
-					<StatusMarket status={market.status_mercado}>
-						<FaTimesCircle size={30} color="#fd3829" />
-						<div>MERCADO FECHADO</div>
-					</StatusMarket>
+					<Skeleton />
 				)}
 			</Card>
 
 			<Card>
 				<h3>FECHAMENTO</h3>
 
-				{market && market.fechamento ? (
+				{market.fechamento ? (
 					<CurrentRound>
-						<small>
-							{market.fechamento.dia}/{market.fechamento.mes}
-						</small>
-						<strong>
-							{market.fechamento.hora}h
-							{market.fechamento.minuto > 0 &&
-								`${market.fechamento.minuto}min`}
-						</strong>
+						{market.fechamento ? (
+							<div>
+								<small>
+									{market.fechamento.dia}/
+									{market.fechamento.mes}
+								</small>
+								<strong>
+									{market.fechamento.hora}h
+									{market.fechamento.minuto > 0 &&
+										`${market.fechamento.minuto}min`}
+								</strong>
+							</div>
+						) : (
+							<div>FECHADO</div>
+						)}
 					</CurrentRound>
 				) : (
-					<CurrentRound>FECHADO</CurrentRound>
+					<Skeleton />
 				)}
 			</Card>
 
 			<Card>
 				<h3>RODADA ATUAL DO CAMPEONATO</h3>
 
-				{market && market.rodada_atual ? (
+				{market.rodada_atual ? (
 					<CurrentRound>{market.rodada_atual}</CurrentRound>
 				) : (
-					<CurrentRound>0</CurrentRound>
+					<Skeleton />
 				)}
 			</Card>
 		</Container>

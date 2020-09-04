@@ -4,14 +4,13 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-// Routes with components
 import Routes from './routes';
 import history from './services/history';
 
 import { store, persistor } from './store';
 
-// Styles globals
 import GlobalStyle from './styles/global';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 	return (
