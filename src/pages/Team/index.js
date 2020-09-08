@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
-import cartolaAPI from '../../services/cartola';
+import Skeleton from 'react-loading-skeleton';
 
 import Card from '../../components/Card';
 import Player from '../../components/Player';
 
 import { Container, Time, Patrimony, Players } from './styles';
+
+import cartolaAPI from '../../services/cartola';
 
 export default function Team() {
 	const [team, setTeam] = useState([]);
@@ -69,8 +71,8 @@ export default function Team() {
 
 	return (
 		<Container>
-			<Card>
-				{infoTeam.time && (
+			<Card padding={false}>
+				{infoTeam.time ? (
 					<Time>
 						<div className="info">
 							<h3>{team.nome}</h3>
@@ -91,11 +93,15 @@ export default function Team() {
 							)}
 						/>
 					</Time>
+				) : (
+					<div className="skeleton">
+						<Skeleton count={2} />
+					</div>
 				)}
 			</Card>
 
-			<Card>
-				{infoTeam.time && (
+			<Card padding={false}>
+				{infoTeam.time ? (
 					<Players>
 						{players &&
 							players.map(player => (
@@ -107,6 +113,11 @@ export default function Team() {
 
 						<Player key={coach.atleta_id} player={coach} />
 					</Players>
+				) : (
+					<div className="skeleton circle">
+						<Skeleton circle height={50} width={50} />
+						<Skeleton height={50} />
+					</div>
 				)}
 			</Card>
 		</Container>

@@ -13,6 +13,7 @@ export const Time = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	padding: 20px;
 
 	img {
 		width: 50px;

@@ -1,20 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.li`
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	flex-direction: row;
-	padding: 15px 0px;
 	border-bottom: 1px solid #f7f7f7;
+	padding: 0;
 
-	&:first-child {
-		padding-top: 0px;
+	.wrapper-player {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: row;
+		padding: 20px;
 	}
 
 	&:last-child {
 		border-bottom: 0px;
-		padding-bottom: 0px;
 	}
 
 	.avatar-player {
@@ -36,23 +35,6 @@ export const Container = styled.li`
 				height: 100%;
 				margin-top: 10px;
 			}
-		}
-
-		.cap {
-			position: absolute;
-			width: 25px;
-			height: 25px;
-			background-color: #ffa000;
-			color: #fff;
-			right: -5px;
-			bottom: -5px;
-			border-radius: 20px;
-			font-weight: 800;
-			justify-content: center;
-			align-items: center;
-			display: flex;
-			font-size: 16px;
-			border: 3px solid #ffa000;
 		}
 	}
 
@@ -82,6 +64,19 @@ export const Container = styled.li`
 				font-weight: 700;
 				font-size: 13px;
 				color: #ff8a00;
+			}
+
+			.cap {
+				background-color: #ffa000;
+				color: #fff;
+				border-radius: 20px;
+				font-weight: 800;
+				justify-content: center;
+				align-items: center;
+				font-size: 16px;
+				border: 3px solid #ffa000;
+				margin-left: 10px;
+				padding: 0px 5px;
 			}
 		}
 

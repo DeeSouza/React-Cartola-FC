@@ -52,6 +52,7 @@ Feel free to check issues page.
 | 🔹 Immer             | [DOCUMENTATION](https://github.com/immerjs/immer)          |
 | 🔹 UnForm            | [DOCUMENTATION](https://github.com/Rocketseat/unform)      |
 | 🔹 PropTypes         | [DOCUMENTATION](https://www.npmjs.com/package/prop-types)  |
+| 🔹 API Cartola FC    | [DOCUMENTATION](https://github.com/wgenial/cartrolandofc/blob/master/nova-api.md)  |
 
 ## STYLE GUIDE 🤳
 

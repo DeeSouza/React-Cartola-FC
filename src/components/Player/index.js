@@ -7,35 +7,41 @@ import { Container } from './styles';
 export default function Player({ player }) {
 	return (
 		<Container>
-			<div className="avatar-player">
-				<div>
-					<img src={player.foto} alt={player.apelido} />
+			<div className="wrapper-player">
+				<div className="avatar-player">
+					<div>
+						<img src={player.foto} alt={player.apelido} />
+					</div>
 				</div>
 
-				{player.capitao && <strong className="cap">C</strong>}
-			</div>
+				<div className="detail">
+					<h2>{player.posicao}</h2>
 
-			<div className="detail">
-				<h2>{player.posicao}</h2>
+					<div className="detail-player">
+						<h3>
+							{player.apelido}
 
-				<div className="detail-player">
-					<h3>{player.apelido}</h3>
+							{player.capitao && (
+								<strong className="cap">C</strong>
+							)}
+						</h3>
 
-					<CurrencyFormat
-						value={player.preco_num}
-						prefix="C$"
-						displayType="text"
-						fixedDecimalScale
-						renderText={value => <h4>{value}</h4>}
-					/>
+						<CurrencyFormat
+							value={player.preco_num}
+							prefix="C$"
+							displayType="text"
+							fixedDecimalScale
+							renderText={value => <h4>{value}</h4>}
+						/>
+					</div>
+
+					{player.escudo_time && (
+						<img
+							alt={player.escudo_time.nome}
+							src={player.escudo_time.escudos['30x30']}
+						/>
+					)}
 				</div>
-
-				{player.escudo_time && (
-					<img
-						alt={player.escudo_time.nome}
-						src={player.escudo_time.escudos['30x30']}
-					/>
-				)}
 			</div>
 		</Container>
 	);

@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
-// Templates
 import AuthLayout from '../pages/Layouts/Auth';
 import FrontendLayout from '../pages/Layouts/Frontend';
 
-// Load Store Redux
 import { store } from '../store';
 
 export default function RouteWrapper({
@@ -14,7 +12,6 @@ export default function RouteWrapper({
 	isPrivate,
 	...rest
 }) {
-	// Control if user is checked
 	const { signed } = store.getState().auth;
 
 	if (!signed && isPrivate) {
@@ -25,7 +22,6 @@ export default function RouteWrapper({
 		return <Redirect to="/dashboard" />;
 	}
 
-	// Template
 	const Layout = signed ? FrontendLayout : AuthLayout;
 
 	return (
