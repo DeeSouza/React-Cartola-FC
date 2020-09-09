@@ -26,7 +26,7 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 				</li>
 				<li>
 					<NavLink
-						to="/team"
+						to="/escalation"
 						onClick={toggleMenu}
 						activeClassName="selected"
 					>

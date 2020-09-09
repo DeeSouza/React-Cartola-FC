@@ -4,7 +4,7 @@ export const Container = styled.li`
 	border-bottom: 1px solid #f7f7f7;
 	padding: 0;
 
-	.wrapper-league {
+	.wrapper-team {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -16,7 +16,7 @@ export const Container = styled.li`
 		border-bottom: 0px;
 	}
 
-	.avatar-league {
+	.avatar-team {
 		position: relative;
 		border-radius: 100%;
 		width: 50px;
@@ -49,7 +49,12 @@ export const Container = styled.li`
 		width: 100%;
 		flex: 2;
 
-		.detail-league {
+		h2 {
+			font-size: 15px;
+			font-weight: 400;
+		}
+
+		.detail-team {
 			margin-left: 15px;
 
 			h3 {
@@ -70,8 +75,8 @@ export const Container = styled.li`
 			p {
 				margin-top: 10px;
 				display: block;
-				font-size: 12px;
-				color: #000000;
+				font-size: 14px;
+				color: #00b3a5;
 			}
 		}
 	}

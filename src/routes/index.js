@@ -5,8 +5,9 @@ import Route from './Route';
 
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
-import Team from '../pages/Team';
+import Escalation from '../pages/Escalation';
 import Leagues from '../pages/Leagues';
+import InfoLeague from '../pages/InfoLeague';
 
 export default function Routes() {
 	return (
@@ -19,9 +20,9 @@ export default function Routes() {
 				routeName="Dashboard"
 			/>
 			<Route
-				path="/team"
+				path="/escalation"
 				isPrivate
-				component={Team}
+				component={Escalation}
 				routeName="Escalação"
 			/>
 			<Route
@@ -29,6 +30,12 @@ export default function Routes() {
 				isPrivate
 				component={Leagues}
 				routeName="Ligas"
+			/>
+			<Route
+				path="/league"
+				isPrivate
+				component={InfoLeague}
+				routeName="Liga"
 			/>
 		</Switch>
 	);

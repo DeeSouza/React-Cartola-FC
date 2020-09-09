@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { MdMenu, MdArrowBack } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { WrapperLayout, MainWrapper, HeaderMenu, OpenMenu } from './styles';
+import { WrapperLayout, MainWrapper, HeaderMenu } from './styles';
 
 import { logoutRequest } from '../../../store/modules/auth/actions';
 
@@ -13,6 +14,8 @@ import logo from '../../../assets/images/logo-react-cartola.svg';
 
 export default function FrontendLayout({ children, routeName }) {
 	const dispatch = useDispatch();
+	const history = useHistory();
+
 	const [open, setOpen] = useState(false);
 
 	function toggleMenu() {
@@ -26,9 +29,15 @@ export default function FrontendLayout({ children, routeName }) {
 	return (
 		<WrapperLayout>
 			<HeaderMenu>
-				<OpenMenu onClick={toggleMenu}>
-					<span />
-				</OpenMenu>
+				{history.action === 'PUSH' ? (
+					<MdArrowBack
+						size={30}
+						color="#FFFFFF"
+						onClick={history.goBack}
+					/>
+				) : (
+					<MdMenu size={30} color="#FFFFFF" onClick={toggleMenu} />
+				)}
 
 				<strong>{routeName}</strong>
 

@@ -9,7 +9,7 @@ import { Container, Time, Patrimony, Players } from './styles';
 
 import cartolaAPI from '../../services/cartola';
 
-export default function Team() {
+export default function Escalation() {
 	const [team, setTeam] = useState([]);
 	const [infoTeam, setInfoTeam] = useState([]);
 	const [players, setPlayers] = useState([]);
