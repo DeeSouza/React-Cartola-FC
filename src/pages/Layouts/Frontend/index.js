@@ -16,6 +16,8 @@ export default function FrontendLayout({ children, routeName }) {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
+	console.log(history);
+
 	const [open, setOpen] = useState(false);
 
 	function toggleMenu() {
@@ -29,14 +31,14 @@ export default function FrontendLayout({ children, routeName }) {
 	return (
 		<WrapperLayout>
 			<HeaderMenu>
-				{history.action === 'PUSH' ? (
+				{history.location.pathname === '/dashboard' ? (
+					<MdMenu size={30} color="#FFFFFF" onClick={toggleMenu} />
+				) : (
 					<MdArrowBack
 						size={30}
 						color="#FFFFFF"
 						onClick={history.goBack}
 					/>
-				) : (
-					<MdMenu size={30} color="#FFFFFF" onClick={toggleMenu} />
 				)}
 
 				<strong>{routeName}</strong>
