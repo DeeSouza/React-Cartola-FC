@@ -4,7 +4,7 @@ export const Container = styled.div`
 	width: 100%;
 	background-color: #fff;
 	border-radius: 5px;
-	padding: ${props => (props.padding ? '0px' : '20px')};
+	padding: ${props => (props.nopadding ? '0px' : '20px')};
 	box-shadow: #cecdcd 2px 2px 3px -1px;
 	flex-direction: column;
 	margin-bottom: 20px;

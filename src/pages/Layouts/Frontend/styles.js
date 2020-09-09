@@ -30,8 +30,17 @@ export const HeaderMenu = styled.header`
 	background: ${settings.linearGradientPrimary};
 	box-shadow: #565656 0px 0px 6px 0px;
 
-	> img {
-		height: 35px;
+	strong {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 600;
+		font-size: 16px;
+	}
+
+	> a {
+		img {
+			height: 35px;
+		}
 	}
 `;
 

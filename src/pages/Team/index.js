@@ -71,7 +71,7 @@ export default function Team() {
 
 	return (
 		<Container>
-			<Card padding>
+			<Card nopadding>
 				{infoTeam.time ? (
 					<Time>
 						<div className="info">
@@ -100,7 +100,7 @@ export default function Team() {
 				)}
 			</Card>
 
-			<Card padding>
+			<Card nopadding>
 				{infoTeam.time ? (
 					<Players>
 						{players &&

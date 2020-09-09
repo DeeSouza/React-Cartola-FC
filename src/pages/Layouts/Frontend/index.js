@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -10,7 +11,7 @@ import Menu from '../../../components/Menu';
 
 import logo from '../../../assets/images/logo-react-cartola.svg';
 
-export default function FrontendLayout({ children }) {
+export default function FrontendLayout({ children, routeName }) {
 	const dispatch = useDispatch();
 	const [open, setOpen] = useState(false);
 
@@ -29,7 +30,11 @@ export default function FrontendLayout({ children }) {
 					<span />
 				</OpenMenu>
 
-				<img src={logo} alt="Reacartola FC" />
+				<strong>{routeName}</strong>
+
+				<Link to="/dashboard">
+					<img src={logo} alt="Reacartola FC" />
+				</Link>
 			</HeaderMenu>
 
 			<Menu
@@ -45,4 +50,5 @@ export default function FrontendLayout({ children }) {
 
 FrontendLayout.propTypes = {
 	children: PropTypes.element.isRequired,
+	routeName: PropTypes.string.isRequired,
 };

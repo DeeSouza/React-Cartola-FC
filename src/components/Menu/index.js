@@ -2,13 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 
-import {
-	FaShoppingBasket,
-	FaUsers,
-	FaSignOutAlt,
-	FaTrophy,
-	FaTimes,
-} from 'react-icons/fa';
+import { FaUsers, FaSignOutAlt, FaTrophy, FaTimes } from 'react-icons/fa';
+
+import { MdDashboard } from 'react-icons/md';
 
 import { Container, CloseMenu } from './styles';
 
@@ -23,9 +19,9 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						activeClassName="selected"
 					>
 						<span>
-							<FaShoppingBasket size={20} color="#FFFFFF" />
+							<MdDashboard size={20} color="#FFFFFF" />
 						</span>
-						<div>Mercado</div>
+						<div>DASHBOARD</div>
 					</NavLink>
 				</li>
 				<li>
@@ -37,7 +33,7 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						<span>
 							<FaUsers size={20} color="#FFFFFF" />
 						</span>
-						<div>Time</div>
+						<div>ESCALAÇÃO</div>
 					</NavLink>
 				</li>
 				<li>
@@ -49,7 +45,7 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						<span>
 							<FaTrophy size={20} color="#FFFFFF" />
 						</span>
-						<div>Ligas</div>
+						<div>LIGAS</div>
 					</NavLink>
 				</li>
 				<li>
@@ -57,7 +53,7 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						<span>
 							<FaSignOutAlt size={20} color="#FFFFFF" />
 						</span>
-						<div>Sair</div>
+						<div>SAIR</div>
 					</Link>
 				</li>
 			</ul>

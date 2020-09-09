@@ -29,16 +29,12 @@ export function* doLogin({ payload }) {
 
 		const { glbId } = response.data;
 
-		// Save Token in the Header
 		cartolaAPI.defaults.headers['X-GLB-TOKEN'] = glbId;
 
-		// Call Action (PUT)
 		yield put(loginSuccess(glbId, email));
 
-		// Redirect to Dashboard if Logged
 		history.push('dashboard');
 	} catch (error) {
-		// Call Action (PUT)
 		yield put(loginFailure());
 		toast.error('😭 😭 😭 E-mail e senha inválidos.');
 	}
@@ -58,7 +54,6 @@ export function setToken({ payload }) {
 	}
 }
 
-// Observers
 export default all([
 	takeLatest('@auth/LOGIN_REQUEST', doLogin),
 	takeLatest('persist/REHYDRATE', setToken),
