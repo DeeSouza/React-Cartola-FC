@@ -16,8 +16,6 @@ export default function FrontendLayout({ children, routeName }) {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
-	console.log(history);
-
 	const [open, setOpen] = useState(false);
 
 	function toggleMenu() {
