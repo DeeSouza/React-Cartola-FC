@@ -8,52 +8,62 @@ export const Container = styled.nav`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: ${settings.linearGradientPrimary};
+	background-color: #ffffff;
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	padding-left: 70px;
-	transform: ${props => (props.open ? 'translateX(0%)' : 'translateX(-100%)')};
+	padding: 60px 20px 20px 20px;
+	transform: ${props =>
+		props.open ? 'translateX(0%)' : 'translateX(-100%)'};
 	transition: all 0.25s ease-out;
 
-	&:after{
-		content: "";
-		height: 120%;
-		background-color: #FFF;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		margin: auto;
-		position: absolute;
-		width: 100px;
-		border-top-left-radius: 50%;
-    	border-bottom-left-radius: 50%;
-	}
+	ul {
+		width: 100%;
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
 
-	li {
-		margin: 10px auto;
-		padding: 20px 20px;
-		transition: all 0.25s ease-out;
+		li {
+			margin-bottom: 10px;
+			width: 100%;
 
-		&:hover{
-			background-color: #329c94;
-			border-radius: 8px;
-		}
-
-		a {
-			color: #fff;
-			font-family: "${settings.fontRoboto}";
-			font-weight: 400;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-
-			svg {
-				margin-right: 10px;
+			&:last-child {
+				margin-top: auto;
+				margin-bottom: 0px;
+				align-self: flex-end;
 			}
 
-			div {
-				font-size: 16px;
+			a {
+				color: #5a5a5a;
+				font-family: ${settings.fontRoboto};
+				font-weight: 400;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				padding: 10px 20px;
+				transition: all 0.25s ease-out;
+				border-radius: 5px;
+
+				&.selected {
+					background-color: #f7f7f7;
+				}
+
+				span {
+					background-color: ${settings.linearGradientPrimary};
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					width: 35px;
+					height: 35px;
+					border-radius: 5px;
+					margin-right: 10px;
+				}
+
+				div {
+					font-size: 18px;
+				}
 			}
 		}
 	}

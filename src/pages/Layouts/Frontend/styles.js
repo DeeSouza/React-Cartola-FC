@@ -20,18 +20,19 @@ export const HeaderMenu = styled.header`
 	position: fixed;
 	z-index: 2;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	top: 0;
 	left: 0;
 	height: 50px;
-	background: linear-gradient(
-		90deg,
-		${settings.linearGradientPrimary},
-		${settings.linearGradiendSecondary}
-	);
+	padding: 0px 15px;
+	background: ${settings.linearGradientPrimary};
 	box-shadow: #565656 0px 0px 6px 0px;
+
+	> img {
+		height: 35px;
+	}
 `;
 
 export const OpenMenu = styled.button`
@@ -42,7 +43,6 @@ export const OpenMenu = styled.button`
 	border: none;
 	display: flex;
 	justify-content: center;
-	margin-left: 15px;
 	position: relative;
 
 	span {

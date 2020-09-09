@@ -7,6 +7,7 @@
     "axios": "^0.19.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "framer-motion": "^2.6.8",
     "history": "^4.10.1",
     "immer": "^4.0.1",
     "polished": "^3.4.1",

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
 import settings from '../../styles/variables';
 
 export const WrapperLogin = styled.div`
@@ -14,6 +16,9 @@ export const WrapperLogin = styled.div`
 		color: #008277;
 		margin-top: 15px;
 		letter-spacing: 5px;
+		opacity: 0;
+		transform: translateY(10px);
+		animation: showUpDown 0.85s forwards linear 2.5s;
 
 		span{
 			color: #FFF;
@@ -40,12 +45,14 @@ export const WrapperLogin = styled.div`
 			height: 45px;
 			border-radius: 4px;
 			padding: 0px 10px;
-			font-family: "${settings.fontRoboto}";
+			font-family: ${settings.fontRoboto};
 			margin-bottom: 10px;
 			font-weight: 500;
 			background-color: rgba(0, 0, 0, 0.15);
 			border-left: 0px solid transparent;
 			color: #FFF;
+			animation: showUpDown 0.85s forwards linear;
+			transform: translateY(-10px);
 			transition: all 0.25s ease-out;
 
 			&:focus{
@@ -59,9 +66,32 @@ export const WrapperLogin = styled.div`
 			}
 		}
 	}
+
+	@keyframes showUpDown {
+		from{
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		to{
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
 `;
 
-export const ImageLogin = styled.img`
+export const ImageLogin = styled(motion.img).attrs({
+	animate: {
+		opacity: [0, 1],
+		y: [0, -20, -20, -10, 0],
+		scale: [1, 1.05, 1.05, 1, 1],
+		rotate: [0, 0, 270, 270, 0],
+		borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+	},
+	transition: {
+		duration: 1.5,
+		delay: 1,
+	},
+})`
 	width: 64px;
 	height: 64px;
 `;
@@ -80,6 +110,7 @@ export const SubmitLogin = styled.button`
     font-family: "${settings.fontRoboto}";
 	transition: all 0.25s ease-out;
 	margin-bottom: 10px;
+	animation: showDownUp 0.85s forwards linear;
 
 	&:hover, &:focus{
 		color: #000;
@@ -97,6 +128,17 @@ export const SubmitLogin = styled.button`
 		}
 		to{
 			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes showDownUp {
+		from{
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to{
+			opacity: 1;
+			transform: translateY(0px);
 		}
 	}
 `;

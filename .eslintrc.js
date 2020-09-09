@@ -25,6 +25,7 @@ module.exports = {
 			{ extensions: [".js", ".jsx"] }
 		],
 		"import/prefer-default-export": "off",
+		"react/jsx-props-no-spreading": "off",
 		"no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
 		"react/jsx-one-expression-per-line": "off",
 		"global-require": "off",

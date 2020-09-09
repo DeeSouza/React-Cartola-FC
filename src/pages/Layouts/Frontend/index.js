@@ -8,6 +8,8 @@ import { logoutRequest } from '../../../store/modules/auth/actions';
 
 import Menu from '../../../components/Menu';
 
+import logo from '../../../assets/images/logo-react-cartola.svg';
+
 export default function FrontendLayout({ children }) {
 	const dispatch = useDispatch();
 	const [open, setOpen] = useState(false);
@@ -26,6 +28,8 @@ export default function FrontendLayout({ children }) {
 				<OpenMenu onClick={toggleMenu}>
 					<span />
 				</OpenMenu>
+
+				<img src={logo} alt="Reacartola FC" />
 			</HeaderMenu>
 
 			<Menu

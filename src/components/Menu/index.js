@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import {
 	FaShoppingBasket,
@@ -17,27 +17,47 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 		<Container open={open}>
 			<ul>
 				<li>
-					<Link to="/" onClick={toggleMenu}>
-						<FaShoppingBasket size={15} color="#FFF" />
-						<div>MERCADO</div>
-					</Link>
+					<NavLink
+						to="/dashboard"
+						onClick={toggleMenu}
+						activeClassName="selected"
+					>
+						<span>
+							<FaShoppingBasket size={20} color="#FFFFFF" />
+						</span>
+						<div>Mercado</div>
+					</NavLink>
 				</li>
 				<li>
-					<Link to="/team" onClick={toggleMenu}>
-						<FaUsers size={15} color="#FFF" />
-						<div>TIME</div>
-					</Link>
+					<NavLink
+						to="/team"
+						onClick={toggleMenu}
+						activeClassName="selected"
+					>
+						<span>
+							<FaUsers size={20} color="#FFFFFF" />
+						</span>
+						<div>Time</div>
+					</NavLink>
 				</li>
 				<li>
-					<Link to="/" onClick={toggleMenu}>
-						<FaTrophy size={15} color="#FFF" />
-						<div>LIGAS</div>
-					</Link>
+					<NavLink
+						to="/leagues"
+						onClick={toggleMenu}
+						activeClassName="selected"
+					>
+						<span>
+							<FaTrophy size={20} color="#FFFFFF" />
+						</span>
+						<div>Ligas</div>
+					</NavLink>
 				</li>
 				<li>
 					<Link to="/" onClick={handleLogout}>
-						<FaSignOutAlt size={15} color="#FFF" />
-						<div>SAIR</div>
+						<span>
+							<FaSignOutAlt size={20} color="#FFFFFF" />
+						</span>
+						<div>Sair</div>
 					</Link>
 				</li>
 			</ul>

@@ -4,8 +4,8 @@ import { FaSpinner } from 'react-icons/fa';
 
 import { Container, Loading } from './styles';
 
-export default function Card({ children }) {
-	return <Container>{children}</Container>;
+export default function Card({ children, ...rest }) {
+	return <Container {...rest}>{children}</Container>;
 }
 
 Card.propTypes = {
