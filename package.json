@@ -5,8 +5,6 @@
   "dependencies": {
     "@rocketseat/unform": "^1.6.1",
     "axios": "^0.19.0",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-plugin-prettier": "^3.1.1",
     "framer-motion": "^2.6.8",
     "history": "^4.10.1",
     "immer": "^4.0.1",
@@ -56,6 +54,8 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^1.7.0"
+	"eslint-plugin-react-hooks": "^1.7.0",
+	"eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1"
   }
 }

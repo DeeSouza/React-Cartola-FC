@@ -1,5 +1,6 @@
 import { takeLatest, call, all, put } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
+
 import cartolaAPI from '../../../services/cartola';
 import api from '../../../services/api';
 import history from '../../../services/history';
@@ -9,7 +10,6 @@ export function* doLogin({ payload }) {
 	const { email, password } = payload;
 
 	try {
-		// Call Sessions API for Login
 		const response = yield call(
 			api.post,
 			'authentication',
@@ -31,7 +31,17 @@ export function* doLogin({ payload }) {
 
 		cartolaAPI.defaults.headers['X-GLB-TOKEN'] = glbId;
 
-		yield put(loginSuccess(glbId, email));
+		const {
+			data: { time },
+		} = yield call(cartolaAPI.get, 'auth/time/info');
+
+		yield put(
+			loginSuccess(glbId, email, {
+				name: time.nome,
+				coach: time.nome_cartola,
+				flag: time.url_escudo_svg,
+			})
+		);
 
 		history.push('dashboard');
 	} catch (error) {

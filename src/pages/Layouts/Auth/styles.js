@@ -10,7 +10,7 @@ export const WrapperLayout = styled.div`
 	background: linear-gradient(
 		360deg,
 		${settings.linearGradientPrimary},
-		${settings.linearGradiendSecondary}
+		${settings.linearGradientSecondary}
 	);
 `;
 

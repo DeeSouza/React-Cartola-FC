@@ -59,9 +59,9 @@ Feel free to check issues page.
 | TECH             | LINK                                              |
 | ---------------- | ------------------------------------------------- |
 | 🔹 Editor Config | [DOCUMENTATION](https://editorconfig.org/)        |
-| 🔹 ESLINT        | [DOCUMENTATION](https://eslint.org/)              |
-| 🔹 PRETTIER      | [DOCUMENTATION](https://prettier.io/)             |
-| 🔹 GITMOJI       | [DOCUMENTATION](https://gitmoji.carloscuesta.me/) |
+| 🔹 ESLint        | [DOCUMENTATION](https://eslint.org/)              |
+| 🔹 Prettier      | [DOCUMENTATION](https://prettier.io/)             |
+| 🔹 GitMoji       | [DOCUMENTATION](https://gitmoji.carloscuesta.me/) |
 
 ## LICENCE 📝
 

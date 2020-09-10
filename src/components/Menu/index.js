@@ -1,16 +1,37 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 
 import { FaUsers, FaSignOutAlt, FaTrophy, FaTimes } from 'react-icons/fa';
+import {
+	MdKeyboardBackspace,
+	MdKeyboardArrowRight,
+	MdDashboard,
+} from 'react-icons/md';
 
-import { MdDashboard } from 'react-icons/md';
-
-import { Container, CloseMenu } from './styles';
+import { Container, CloseMenu, ProfileInfo } from './styles';
 
 export default function Menu({ open, toggleMenu, handleLogout }) {
+	const user = useSelector(state => state.auth.team);
+
 	return (
 		<Container open={open}>
+			<ProfileInfo>
+				<button type="button" onClick={toggleMenu}>
+					<MdKeyboardBackspace />
+				</button>
+
+				<div className="wrapper-user">
+					<div className="image-user">
+						<img src={user.flag} alt={user.name} />
+					</div>
+					<strong>{user.name}</strong>
+					<small>{user.coach}</small>
+				</div>
+			</ProfileInfo>
+
 			<ul>
 				<li>
 					<NavLink
@@ -19,9 +40,10 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						activeClassName="selected"
 					>
 						<span>
-							<MdDashboard size={20} color="#FFFFFF" />
+							<MdDashboard />
 						</span>
-						<div>DASHBOARD</div>
+						<div>Dashboard</div>
+						<MdKeyboardArrowRight />
 					</NavLink>
 				</li>
 				<li>
@@ -31,9 +53,10 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						activeClassName="selected"
 					>
 						<span>
-							<FaUsers size={20} color="#FFFFFF" />
+							<FaUsers />
 						</span>
-						<div>ESCALAÇÃO</div>
+						<div>Escalação</div>
+						<MdKeyboardArrowRight />
 					</NavLink>
 				</li>
 				<li>
@@ -43,17 +66,19 @@ export default function Menu({ open, toggleMenu, handleLogout }) {
 						activeClassName="selected"
 					>
 						<span>
-							<FaTrophy size={20} color="#FFFFFF" />
+							<FaTrophy />
 						</span>
-						<div>LIGAS</div>
+						<div>Ligas</div>
+						<MdKeyboardArrowRight />
 					</NavLink>
 				</li>
 				<li>
 					<Link to="/" onClick={handleLogout}>
 						<span>
-							<FaSignOutAlt size={20} color="#FFFFFF" />
+							<FaSignOutAlt />
 						</span>
-						<div>SAIR</div>
+						<div>Sair</div>
+						<MdKeyboardArrowRight />
 					</Link>
 				</li>
 			</ul>
